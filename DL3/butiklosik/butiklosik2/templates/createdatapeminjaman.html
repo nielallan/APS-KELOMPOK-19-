@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Data</title>
+</head>
+<body>
+    <h1>Create Data Peminjaman</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            <body>
+                <tr>
+                    <th>ID Peminjaman</th>
+                    <td>
+                        <input type="number" name="idpeminjaman">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Tanggal Sewa</th>
+                    <td>
+                        <input type="date" name="tanggalsewa">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Status Peminjaman</th>
+                    <td>
+                        <select name="statuspeminjaman" id="">
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Lama Sewa</th>
+                    <td>
+                        <input type="number" name="lamasewa">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Tanggal Kembali</th>
+                    <td>
+                        <input type="date" name="tanggalkembali">
+                    </td>
+                </tr>
+            </body>
+        </table>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>

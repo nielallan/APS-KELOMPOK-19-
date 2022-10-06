@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Pakaian</title>
+</head>
+<body>
+    <hi>Update pakaian<hi>
+        <form action="" method="post">
+           {% csrf_token %}
+           <table>
+            <tbody>
+                <tr>
+                    <th>ID Pakaian<th>
+                        <td>
+                            <input type="text" value="{{pakaianobj.idpakaian}}" name="pakaian">
+                            <td>
+                </tr>
+                <tr>
+                    <th>Jenispakaian<th>
+                    <td>
+                        <select name="jenispakaian" id="">
+                            <option value="Pakaian adat Bali">Pakaian adat Bali</option>
+                            <option value="Pakaian adat Sumatera">Pakaian adat Bali</option>
+                            <option value="Perwayangan">Perwayangan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Ukuranpakaian</th>
+                    <td>
+                        <select name="ukuranpakaian" id="">
+                            <option value="Dewasa">Dewasa</option>
+                            <option value="Anak">Anak</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Hargapakaian<th>
+                    <td>
+                        <select name="hargapakaian" id="">
+                            <option value="Rp100.000">Rp100.000</option>
+                            <option value="Rp75.000">Rp75.000</option>
+                            <option value="Rp200.000">Rp200.000</option>
+                            <option value="Rp135.000">Rp135.000</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Konfirmasipakaian<th>
+                        <select name="konfirmasipakaian" id="">
+                            <option value="iya">iya</option>
+                            <option value="tidak">tidak</option>
+                        </select>
+                    </td> 
+                    <tr>
+            </table>
+                    <button type="submit" >Submit</button>
+            </form>
+</body>
+</html>

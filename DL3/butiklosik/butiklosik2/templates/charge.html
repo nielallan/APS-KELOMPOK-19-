@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Charge</h1>
+    <table>
+        <tr>
+            <th>ID Charge</th>
+            <th>Rincian Charge</th>
+            <th>Jenis Charge</th>
+            <th>Harga Charge</th>
+        </tr>
+        {% for item in allchargeobj %}
+        <tr>
+            <td>{{ item.idcharge }}</td>
+            <td>{{ item.rinciancharge }}</td>
+            <td>{{ item.jenischarge }}</td>
+            <td>{{ item.hargacharge }}</td>
+            <td>
+                <a href="{% url 'updatecharge' item.idcharge %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deletecharge' item.idcharge %}">
+                    <button>Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'createdatacharge' %}"> 
+        <button>Create Data Charge</button>
+    </a>
+    <h1>Get Charge</h1>
+    <table>
+        <tr>
+            <th>ID Charge</th>
+            <th>Rincian Charge</th>
+            <th>Jenis Charge</th>
+            <th>Harga Charge</th>
+        </tr>
+        <tr>
+            <td>{{ getchargeobj.idcharge }}</td>
+            <td>{{ getchargeobj.rinciancharge }}</td>
+            <td>{{ getchargeobj.jenischarge }}</td>
+            <td>{{ getchargeobj.hargacharge }}</td>
+        </tr>
+    </table> 
+</body>
+</html>

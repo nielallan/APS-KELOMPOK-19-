@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakaian</title>
+</head>
+<body>
+    <h1>Pakaian</h1>
+    <table>
+        <tr>
+            <th>IDPakaian</th>
+            <th>JenisPakaian</th>
+            <th>UkuranPakaian</th>
+            <th>HargaPakaian</th>
+            <th>KonfirmasiPakaian</th>
+        </tr>
+        {% for item in allpakaianobj %}
+        <tr>
+            <td>{{ item.idpakaian}}</td>
+            <td>{{ item.jenispakaian}}</td>
+            <td>{{ item.ukuranpakaian}}</td>
+            <td>{{ item.hargapakaian}}</td>
+            <td>{{ item.konfirmasipakaian}}</td>
+            <td>
+                <a href="{% url 'updatepakaian' item.idpakaian %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deletepakaian' item.idpakaian %}">
+                    <button>Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'createdatapakaian' %}"> 
+        <button>Create Data</button>
+    </a>
+    <h1>Get Pakaian</h1>
+    <table>
+        <tr>
+            <th>IDPakaian</th>
+            <th>JenisPakaian</th>
+            <th>UkuranPakaian</th>
+            <th>HargaPakaian</th>
+            <th>KonfirmasiPakaian</th>
+        </tr>
+        <tr>
+            <td>{{ getpakaianobj.idpakaian }}</td>
+            <td>{{ getpakaianobj.jenispakaian }}</td>
+            <td>{{ getpakaianobj.ukuranpakaian }}</td>
+            <td>{{ getpakaianobj.hargapakaian }}</td>
+            <td>{{ getpakaianobj.konfirmasipakaian }}</td>
+        </tr>
+    </table> 
+</body>
+</html>

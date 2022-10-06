@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detail Charge/h1>
+    <table>
+        <tr>
+            <th>Jumlah Item Charge</th>
+        </tr>
+        {% for item in alldetailchargeobj %}
+        <tr>
+            <td>{{ item.jumlahitemcharge}}</td>
+            <td>
+                <a href="{% url 'updatedetailcharge' item.iddetailcharge %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deletedetailcharge' item.iddetailcharge %}">
+                    <button>Delete</button>
+                </a>
+            </td> 
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'createdatadetailcharge' %}"> 
+        <button>Create Data</button>
+    </a>
+    <h1>Get Detail Charge</h1>
+    <table>
+        <tr>
+            <th>Jumlah Item Charge</th>
+        </tr>
+        <tr>
+            <td>{{ getdetailchargeobj.jumlahitemcharge }}</td>
+        </tr>
+    </table>
+</body>
+</html>

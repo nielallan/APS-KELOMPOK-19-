@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Data Pelanggan</h1>
+    <form action="" method="post">
+        {% csrf_token %} 
+        <table>
+            <tr>
+                <th>Nama</th>
+                <td>
+                    <input type="text" name="nama" value="{{pelangganobj.nama}}">
+                </td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>
+
+                    <input type="text" name="jeniskelamin" value="{{pelangganobj.jeniskelamin}}"> 
+                </td>
+            <tr>
+            </tr>
+                <th>Alamat</th>
+                <td>
+
+                    <input type="text" name="alamat" value="{{pelangganobj.alamat}}">
+                </td>
+            </tr>
+            <tr>
+                <th>Nomor Handphone</th>
+                <td>
+
+                    <input type="number" name="nohandphone" value="{{pelangganobj.nohandphone}}">
+                </td>
+            </tr>
+        </table>
+        <button type="submit" >Submit</button>
+    </form>
+</body>
+</html>

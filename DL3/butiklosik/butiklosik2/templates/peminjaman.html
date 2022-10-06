@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Peminjaman</h1>
+    <table>
+        <tr>
+            <th>Tanggal Sewa</th>
+            <th>Status Peminjaman</th>
+            <th>Lama Sewa</th>
+            <th>Tanggal Kembali</th>
+        </tr>
+        {% for item in allpeminjamanobj %}
+        <tr>
+            <td>{{ item.tanggalsewa}}</td>
+            <td>{{ item.statuspeminjaman}}</td>
+            <td>{{ item.lamasewa}}</td>
+            <td>{{ item.tanggalkembali}}</td>
+            <td>
+                <a href="{% url 'updatepeminjaman' item.idpeminjaman %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deletepeminjaman' item.idpeminjaman %}">
+                    <button>Delete</button>
+                </a>
+            </td> 
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'createdatapeminjaman' %}"> 
+        <button>Create Data</button>
+    </a>
+    <h1>Get Peminjaman</h1>
+    <table>
+        <tr>
+            <th>Tanggal Sewa</th>
+            <th>Status Peminjaman</th>
+            <th>Lama Sewa</th>
+            <th>Tanggal Kembali</th>
+        </tr>
+        <tr>
+            <td>{{ getpeminjamanobj.tanggalsewa }}</td>
+            <td>{{ getpeminjamanobj.statuspeminjaman }}</td>
+            <td>{{ getpeminjamanobj.lamasewa }}</td>
+            <td>{{ getpeminjamanobj.tanggalkembali }}</td>
+        </tr>
+    </table>
+</body>
+</html>
